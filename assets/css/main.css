@@ -178,7 +178,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
 	}
 
 		p.content {
@@ -196,7 +196,7 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
 		line-height: 1.5;
-		margin: 0 0 0.7em 0;
+		margin: 0.7em 0 0.7em 0;
 		letter-spacing: -0.025em;
 	}
 
@@ -2638,10 +2638,13 @@ input, select, textarea {
 
 	header.major {
 		margin-bottom: 3em;
+		text-align: center;
 	}
 
 		header.major h2 {
 			font-size: 2em;
+			position: relative;
+			text-align: center;
 		}
 
 			header.major h2:after {
@@ -2649,8 +2652,9 @@ input, select, textarea {
 				content: '';
 				width: 3.25em;
 				height: 2px;
-				margin: 0.7em 0 1em 0;
+				margin: 0.7em auto 0;
 				border-radius: 2px;
+				background-color: currentColor;
 			}
 
 				section.special header.major h2:after, article.special header.major h2:after {
@@ -2811,26 +2815,40 @@ input, select, textarea {
 		margin: 0 0 3em -2em;
 		padding: 0;
 		list-style: none;
+		text-align: center;
+		position: relative;
 	}
 
-	.logo_feature img {
-		width: 150px;
-		height: auto;
+.logo_feature img {
+	width: 150px;
+	height: auto;
+	margin: 0 auto; /* Centre l'image dans son conteneur */
+	transition: transform 0.3s ease; /* Ajoute une transition pour le hover */
+}
+
+
+	.logo_feature img:hover{
+		transform: scale(1.1);
 	}
 
-		.features li {
-			width: calc(33.33333% - 2em);
-			margin-left: 2em;
-			margin-top: 3em;
-			padding: 0;
-		}
+	.features li {
+		display: flex;
+		flex-direction: column; /* Arrange les enfants verticalement */
+		align-items: center; /* Centre les éléments horizontalement */
+		justify-content: center; /* Centre les éléments verticalement */
+		width: calc(20% - 2em);
+		margin-left: 2em;
+		margin-top: 3em;
+		padding: 0;
+		text-align: center; /* Centre le texte et les éléments dans chaque <li> */
+	}
 
 			.features li:nth-child(1), .features li:nth-child(2), .features li:nth-child(3) {
-				margin-top: 0;
+				margin-top:0;
 			}
 
 			.features li > :last-child {
-				margin-bottom: 0;
+				margin-bottom:0;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -2862,6 +2880,12 @@ input, select, textarea {
 						margin-top: 2em;
 					}
 
+		}
+
+		.features h3 {
+			margin-top: 1em; /* Ajoute un espace au-dessus du titre */
+			font-size: 1.2em;
+			text-align: center;
 		}
 
 /* Statistics */
@@ -3341,7 +3365,8 @@ input, select, textarea {
 	#main {
 		background-color: #ffffff;
 		color: #636363;
-		border-radius: 0.25em;
+		border-radius: 0.5em;
+		padding: 15px 5px 30px 5px;
 	}
 
 		#main input, #main select, #main textarea {
@@ -3788,3 +3813,40 @@ input, select, textarea {
 			}
 
 		}
+
+
+.text-container p {
+	font-size: 1.1em;
+	letter-spacing: -0.025em;
+	text-align: justify;
+	padding: 0 40px 20px 60px;
+}
+
+.text-container ol {
+	font-size: 1.1em;
+	letter-spacing: -0.025em;
+	text-align: justify;
+	padding: 0 40px 0 50px;
+}
+
+.text-container:after {
+	display: block;
+	content: '';
+	width: 5.1em;
+	height: 3px;
+	border-radius: 2px;
+	margin: 30px auto 40px auto;
+
+	background-color: #dddddd;
+	background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+	background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+	background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+	background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+}
+
+.organigramme img {
+	position: relative;
+	width: 90%;
+	display: block;
+	margin: 0 92px;
+}
